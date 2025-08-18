@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="./styles/output.css">
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body class="w-full">
+
+  <!-- <button>Start Focus ▶️</button> -->
+  <div class="mt-10 flex  flex-col justify-center w-[80%] mx-auto border-1 p-5 rounded-3xl border-blue-200 border-3 bg-blue-100">
+    <input type="text" id="task" placeholder="Add Task..." required class=" w-100 mx-auto bg-white p-2 m-2 rounded-3xl border-none">
+    <div class="border-1 w-100 mx-auto rounded-3xl p-2 m-2 border-none bg-white flex justify-between">
+      <div><label for="quad-select" class="text-gray-500">Hold On bruh ...</label></div>
+      <div>
+        <select class="border-blue-300 border-2 bg-blue-200 rounded-xl text-gray-500" name="Quad-selection" id="quad-select" required>
+          <option class="border-blue-300 border-none text-gray-500" value="do">Do</option>
+          <option class="border-blue-300 border-none text-gray-500" value="decide">Decide</option>
+          <option class="border-blue-300 border-none text-gray-500" value="delegate">Delegate</option>
+          <option class="border-blue-300 border-none text-gray-500" value="delete">Delete</option>
+          <option class="border-blue-300 border-none text-gray-500" value="done">Done</option>
+          <option class="border-blue-300 border-none text-gray-500" value="default" selected>Default</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="bg-blue-200  rounded-xl border-blue-300 border-2 w-30 mx-auto m-3 p-2" id="addTask">Add Task</button>
+  </div>
+
+  <section class="grid grid-cols-1 lg:grid-cols-2 -gap-x-30  gap-y-3 w-min-full">
+    <div class="card1" ondrop="drop(event,'do')" ondragover="allowDrop(event)" id="quad-do">
+      <h1 class="text-red-500 underline underline-offset-4 text-3xl text-center font-bold">DO IT NOW.</h1>
+    </div>
+    <div class="card2" ondrop="drop(event,'decide')" ondragover="allowDrop(event)" id="quad-decide">
+      <h1 class="text-blue-500 underline underline-offset-4 text-3xl text-center font-bold">SCHEDULE.</h1>
+    </div>
+    <div class="card3" ondrop="drop(event,'delegate')" ondragover="allowDrop(event)" id="quad-delegate">
+      <h1 class="text-yellow-500 underline underline-offset-4 text-3xl text-center font-bold">FREE TIME.</h1>
+    </div>
+    <div class="card4" ondrop="drop(event,'delete')" ondragover="allowDrop(event)" id="quad-delete">
+      <h1 class="text-red-500 underline underline-offset-4 text-3xl text-center font-bold">DON'T TOUCH IT.</h1>
+    </div>
+
+  </section>
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-2 w-full">
+    <div class="card5 quad-default" ondrop="drop(event,'default')" ondragover="allowDrop(event)"   id="quad-default-1">
+      <h1 class="text-gray-500 italic   text-3xl text-center font-bold">Pending...</h1>
+    </div>
+    <div class="card6" ondrop="drop(event,'done')" ondragover="allowDrop(event)" id="quad-done">
+      <h1 class="text-orange-500 italic text-3xl text-center font-bold">OVER AND OUT!!</h1>
+    </div>
+    <div class="card5 quad-default" ondrop="drop(event,'default')" ondragover="allowDrop(event)"   id="quad-default-2">
+      
+    </div>
+  </section>
+
+  <!-- <section>
+    <div id="pomodoro">
+      <h2 id="timer">25:00</h2>
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
+      <button id="reset">Reset</button>
+    </div>
+  </section> -->
+</body>
+<script src="script.js"></script>
+
+</html>
