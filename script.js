@@ -56,6 +56,7 @@ function toggleDone(id) {
 
     if (!task.done) {
       task.quad = "default"
+      task.doneAt=null
     }
     saveTask();
     allocate();
@@ -97,10 +98,7 @@ function drop(ev, quadName) {
   const id = Number(ev.dataTransfer.getData("text/plain"));
   moveTask(id, quadName)
 }
-function addCursorEvents(el) {
-  el.addEventListener('dragstart', () => el.style.cursor = 'grabbing');
-  el.addEventListener('dragend', () => el.style.cursor = 'grab');
-}
+
 function allocate() {
   dropDown(); // remove old done tasks
 
@@ -184,5 +182,54 @@ document.getElementById('addTask').onclick = () => {
 
 
 };
+function addCursorEvents(el) {
+  // default look
+  el.style.cursor = "grab";
+
+  el.addEventListener("mousedown", () => {
+    el.style.cursor = "grabbing";
+
+    const resetCursor = () => {
+      el.style.cursor = "grab";
+      document.removeEventListener("mouseup", resetCursor);
+    };
+
+    document.addEventListener("mouseup", resetCursor);
+  });
+}
 
 
+
+// Drag the Div
+const div = document.getElementById("quad-default-1");
+
+let offsetX = 0, offsetY = 0, isDragging = false;
+
+div.style.cursor = 'grab';
+
+div.addEventListener("mousedown", (e) => {
+  // right-click only moves the container
+  if (e.button === 2) {
+    e.preventDefault();
+    isDragging = true;
+    offsetX = e.clientX - div.offsetLeft;
+    offsetY = e.clientY - div.offsetTop;
+    div.style.cursor = "grabbing";
+  }
+});
+
+// move the parent only if right-click drag
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    div.style.left = e.clientX - offsetX + "px";
+    div.style.top = e.clientY - offsetY + "px";
+  }
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+  div.style.cursor = "grab";
+});
+
+// prevent browser context menu on right click
+div.addEventListener("contextmenu", (e) => e.preventDefault());
