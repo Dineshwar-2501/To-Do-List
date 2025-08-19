@@ -17,13 +17,16 @@
 }
 
 .card5 {
-  @apply border-gray-500 border-4 w-120 min-h-60 p-5 m-1 bg-gray-200 text-gray-500 rounded-xl mx-auto
+  @apply border-gray-500 border-4 w-90 min-h-60 p-5 m-1 bg-gray-200 text-gray-500 rounded-xl mx-auto
 }
 
 .card6 {
   @apply border-orange-500 border-4 w-120 min-h-60 p-5 m-1 bg-orange-200 text-gray-500 rounded-xl mx-auto
 }
 
+.card7 {
+  @apply border-gray-500 border-4 w-120 min-h-60 p-5 m-1 bg-gray-200 text-gray-500 rounded-xl mx-auto
+}
 .card1>.task {
   @apply flex justify-between w-full m-2 border-2 border-red-500 rounded-xl px-5 py-1 bg-red-100
 }
@@ -46,4 +49,7 @@
 
 .card6>.task {
   @apply flex justify-between w-full m-2 border-2 border-orange-500 rounded-xl px-5 py-1 bg-orange-100
+}
+.card7>.task {
+  @apply flex justify-between w-full m-2 border-2 border-gray-500 rounded-xl px-5 py-1 bg-gray-100
 }

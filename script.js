@@ -131,7 +131,7 @@ function allocate() {
     if (!task.quad || !["do", "decide", "delegate", "delete", "done", "default"].includes(task.quad)) {
       task.quad = "default";
     }
-  
+
     const taskDiv = document.createElement('div');
     taskDiv.className = 'task div';
     taskDiv.draggable = true;
@@ -143,21 +143,25 @@ function allocate() {
       <button onclick="deleteTask(${task.id})">X</button>
     `;
     taskDiv.ondblclick = () => toggleDone(task.id);
-  
+
     addCursorEvents(taskDiv);
-  
+
     if (task.quad === "default") {
       defaultDivs.forEach((div, i) => {
         const clone = i === 0 ? taskDiv : taskDiv.cloneNode(true);
-        addCursorEvents(clone); 
+        addCursorEvents(clone);
         div.appendChild(clone);
-        if (i === 1) { // only target the clone
-          const taskCount = div.querySelectorAll('.task').length;
-          div.style.display = taskCount ? 'block' : 'none';
-        }
+
       });
     } else {
       quadrants[task.quad].appendChild(taskDiv);
+    }
+
+    let cloneNode = document.querySelector('#quad-default-1');
+
+    if (cloneNode) { // only target the clone
+      const taskCount = cloneNode.querySelectorAll('.task').length;
+      cloneNode.style.display = taskCount ? 'block' : 'none';
     }
   });
 

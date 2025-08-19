@@ -185,6 +185,9 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
   .m-2 {
     margin: calc(var(--spacing) * 2);
   }
@@ -193,6 +196,12 @@
   }
   .mx-auto {
     margin-inline: auto;
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
   }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
@@ -206,8 +215,17 @@
   .grid {
     display: grid;
   }
+  .hidden {
+    display: none;
+  }
+  .table {
+    display: table;
+  }
   .w-30 {
     width: calc(var(--spacing) * 30);
+  }
+  .w-50 {
+    width: calc(var(--spacing) * 50);
   }
   .w-100 {
     width: calc(var(--spacing) * 100);
@@ -218,11 +236,19 @@
   .w-full {
     width: 100%;
   }
-  .cursor-grab {
-    cursor: grab;
+  .border-collapse {
+    border-collapse: collapse;
   }
-  .cursor-grabbing {
-    cursor: grabbing;
+  .translate-x-100 {
+    --tw-translate-x: calc(var(--spacing) * 100);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .-translate-y-100 {
+    --tw-translate-y: calc(var(--spacing) * -100);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .resize {
+    resize: both;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -230,29 +256,17 @@
   .flex-col {
     flex-direction: column;
   }
+  .flex-row {
+    flex-direction: row;
+  }
   .justify-between {
     justify-content: space-between;
   }
   .justify-center {
     justify-content: center;
   }
-  .gap-1 {
-    gap: calc(var(--spacing) * 1);
-  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
-  }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
-  }
-  .gap-x-3 {
-    column-gap: calc(var(--spacing) * 3);
-  }
-  .gap-x-4 {
-    column-gap: calc(var(--spacing) * 4);
-  }
-  .gap-x-10 {
-    column-gap: calc(var(--spacing) * 10);
   }
   .gap-y-3 {
     row-gap: calc(var(--spacing) * 3);
@@ -262,6 +276,10 @@
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
   }
   .border-1 {
     border-style: var(--tw-border-style);
@@ -297,8 +315,20 @@
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
   .p-5 {
     padding: calc(var(--spacing) * 5);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
   }
   .text-center {
     text-align: center;
@@ -332,24 +362,31 @@
   .underline {
     text-decoration-line: underline;
   }
-  .underline-offset-2 {
-    text-underline-offset: 2px;
-  }
-  .underline-offset-3 {
-    text-underline-offset: 3px;
-  }
   .underline-offset-4 {
     text-underline-offset: 4px;
   }
-  .underline-offset-6 {
-    text-underline-offset: 6px;
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
-  .underline-offset-8 {
-    text-underline-offset: 8px;
+  .sm\:hidden {
+    @media (width >= 40rem) {
+      display: none;
+    }
+  }
+  .lg\:block {
+    @media (width >= 64rem) {
+      display: block;
+    }
   }
   .lg\:grid-cols-2 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .xl\:block {
+    @media (width >= 80rem) {
+      display: block;
     }
   }
 }
@@ -409,7 +446,7 @@
   margin: calc(var(--spacing) * 1);
   margin-inline: auto;
   min-height: calc(var(--spacing) * 60);
-  width: calc(var(--spacing) * 120);
+  width: calc(var(--spacing) * 90);
   border-radius: var(--radius-xl);
   border-style: var(--tw-border-style);
   border-width: 4px;
@@ -428,6 +465,19 @@
   border-width: 4px;
   border-color: var(--color-orange-500);
   background-color: var(--color-orange-200);
+  padding: calc(var(--spacing) * 5);
+  color: var(--color-gray-500);
+}
+.card7 {
+  margin: calc(var(--spacing) * 1);
+  margin-inline: auto;
+  min-height: calc(var(--spacing) * 60);
+  width: calc(var(--spacing) * 120);
+  border-radius: var(--radius-xl);
+  border-style: var(--tw-border-style);
+  border-width: 4px;
+  border-color: var(--color-gray-500);
+  background-color: var(--color-gray-200);
   padding: calc(var(--spacing) * 5);
   color: var(--color-gray-500);
 }
@@ -509,6 +559,34 @@
   padding-inline: calc(var(--spacing) * 5);
   padding-block: calc(var(--spacing) * 1);
 }
+.card7>.task {
+  margin: calc(var(--spacing) * 2);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-radius: var(--radius-xl);
+  border-style: var(--tw-border-style);
+  border-width: 2px;
+  border-color: var(--color-gray-500);
+  background-color: var(--color-gray-100);
+  padding-inline: calc(var(--spacing) * 5);
+  padding-block: calc(var(--spacing) * 1);
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -518,11 +596,20 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
       --tw-border-style: solid;
       --tw-font-weight: initial;
+      --tw-outline-style: solid;
     }
   }
 }
