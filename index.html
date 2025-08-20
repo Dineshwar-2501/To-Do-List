@@ -16,10 +16,10 @@
 
   <!-- <button>Start Focus ▶️</button> -->
   <div
-    class="mt-2 flex  flex-row justify-center w-[80%] mx-auto  px-5 rounded-3xl border-blue-200 border-3 opc fixed left-35 top-0">
+    class="mt-2 flex  lg:flex-row flex-col justify-center w-[80%] mx-auto  px-5 rounded-3xl border-blue-200 border-3 opc lg:fixed left-35 top-0">
     <input type="text" id="task" placeholder="Add Task..." required
-      class=" w-100 mx-auto bg-white p-2 m-2 rounded-3xl border-none">
-    <div class="border-1 w-50 mx-auto rounded-3xl p-3 m-2 border-none bg-white flex justify-between">
+      class="lg:w-100 w-70 mx-auto bg-white p-2 m-2 rounded-xl border-none">
+    <div class="border-1 w-50 mx-auto rounded-xl p-3 m-2 border-none bg-white flex justify-between">
       <div><label for="quad-select" class="text-gray-500">Hold On .</label></div>
       <div>
         <select class="border-blue-300 border-2 bg-blue-200 rounded-xl text-gray-500" name="Quad-selection"
@@ -36,15 +36,16 @@
     <button type="submit" class="bg-blue-200  rounded-xl border-blue-300 border-2 w-30 mx-auto m-3 p-2" id="addTask">Add
       Task</button>
   </div>
-  <div class="flex p-1 ml-70 mt-20">
-    <h1 class="font-bold text-2xl text-white">URGENT</h1>
-    <h1 class="font-bold text-2xl ml-100 text-white">NOT URGENT</h1>
-
+  <div class="lg:block hidden">
+    <div class="lg:flex p-1 ml-70 mt-20 ">
+      <h1 class="font-bold text-2xl text-white">URGENT</h1>
+      <h1 class="font-bold text-2xl ml-100 text-white">NOT URGENT</h1>
+    </div>
   </div>
 
   <section class="grid grid-cols-1 lg:grid-cols-2  mt-2   w-min-full container">
     <div class="flex ">
-      <h1 class="font-bold text-2xl rotate-270  h-fit w-0   mt-40 ml-2 text-white">IMPORTANT</h1>
+      <h1 class="font-bold text-2xl rotate-270  h-fit w-0   mt-40 ml-2 hidden lg:block text-white">IMPORTANT</h1>
       <div class="card1" ondrop="drop(event,'do')" ondragover="allowDrop(event)" id="quad-do">
         <h1 class="text-red-500 underline underline-offset-4 text-3xl text-center font-bold ">DO IT NOW.</h1>
       </div>
@@ -53,7 +54,7 @@
       <h1 class="text-blue-500 underline underline-offset-4 text-3xl text-center font-bold ">SCHEDULE.</h1>
     </div>
     <div class="flex ">
-      <h1 class="font-bold text-2xl rotate-270  h-fit w-0 mt-50  ml-2 text-white">NOT_IMPORTANT</h1>
+      <h1 class="font-bold text-2xl rotate-270  h-fit w-0 mt-50  ml-2 hidden lg:block text-white">NOT_IMPORTANT</h1>
 
       <div class="card3" ondrop="drop(event,'delegate')" ondragover="allowDrop(event)" id="quad-delegate">
         <h1 class="text-yellow-400 underline underline-offset-4 text-3xl text-center font-bold">FREE TIME.</h1>
@@ -66,10 +67,11 @@
   </section>
 
   <section class="grid grid-cols-1 lg:grid-cols-2 gap-2 w-full container">
-    <div class="card5 xl:block hidden  
-    quad-default absolute translate-x-100 -translate-y-100"
+
+    <div class="card5 lg:block  quad-default  w-100 lg:w-60 absolute translate-x-11.5 lg:translate-x-95 lg:-translate-y-110"
       ondrop="drop(event,'default')" ondragover="allowDrop(event)" id="quad-default-1">
       <h1 class="font-bold text-center">To-Do-List</h1>
+
     </div>
     <div class="card7 
     quad-default " ondrop="drop(event,'default')" ondragover="allowDrop(event)" id="quad-default-2">

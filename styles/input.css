@@ -5,7 +5,7 @@
 }
 
 .card2 {
-  @apply border-blue-500 border-4 w-100 min-h-60 p-5 m-1 bg-blue-200 text-gray-500 rounded-xl mx-auto
+  @apply border-blue-500 border-4 w-100 min-h-60 p-5 m-1  bg-blue-200 text-gray-500 rounded-xl mx-auto
 }
 
 .card3 {
@@ -17,7 +17,7 @@
 }
 
 .card5 {
-  @apply border-gray-500 border-4 w-90 min-h-60 p-5 m-1  text-gray-500 rounded-xl mx-auto
+  @apply border-gray-500 border-4 min-h-60 p-5 m-1 lg:block hidden text-gray-500 rounded-xl mx-auto
 }
 
 .card6 {
@@ -25,31 +25,33 @@
 }
 
 .card7 {
-  @apply border-gray-500 border-4 w-100 min-h-60 p-5 m-1  text-gray-500 rounded-xl mx-auto
+  @apply border-gray-500 border-4 w-100 min-h-60 p-5 m-1 text-gray-500 rounded-xl mx-auto
 }
+
 .card1>.task {
-  @apply flex justify-between w-full m-2 border-2 border-red-500 rounded-xl px-5 py-1 bg-red-100
+  @apply flex justify-between w-full m-2 border-2 border-red-500 overflow-clip rounded-xl px-5 py-1 bg-red-100
 }
 
 .card2>.task {
-  @apply flex justify-between w-full m-2 border-2 border-blue-500 rounded-xl px-5 py-1 bg-blue-100
+  @apply flex justify-between w-full m-2 border-2 border-blue-500 overflow-clip rounded-xl px-5 py-1 bg-blue-100
 }
 
 .card3>.task {
-  @apply flex justify-between w-full m-2 border-2 border-yellow-500 rounded-xl px-5 py-1 bg-yellow-100
+  @apply flex justify-between w-full m-2 border-2 border-yellow-500 overflow-clip rounded-xl px-5 py-1 bg-yellow-100
 }
 
 .card4>.task {
-  @apply flex justify-between w-full m-2 border-2 border-black rounded-xl px-5 py-1 bg-gray-800
+  @apply flex justify-between w-full m-2 border-2 border-black overflow-clip rounded-xl px-5 py-1 bg-gray-800
 }
 
 .card5>.task {
-  @apply flex justify-between w-full m-2 border-2 border-gray-500 rounded-xl px-5 py-1 bg-gray-100
+  @apply flex justify-between w-full m-2 border-2 border-gray-500 overflow-clip rounded-xl px-5 py-1 bg-gray-100
 }
 
 .card6>.task {
-  @apply flex justify-between w-full m-2 border-2 border-orange-500 rounded-xl px-5 py-1 bg-orange-100
+  @apply flex justify-between w-full m-2 border-2 border-orange-500  overflow-clip rounded-xl px-5 py-1 bg-orange-100
 }
+
 .card7>.task {
-  @apply flex justify-between w-full m-2 border-2 border-gray-500 rounded-xl px-5 py-1 bg-gray-100
+  @apply flex justify-between w-full m-2 border-2 border-gray-500 overflow-clip rounded-xl px-5 py-1 bg-gray-100
 }
