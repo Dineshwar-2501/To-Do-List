@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 .card1 {
-  @apply border-red-500 border-4 w-100 min-h-60 p-5 m-1 bg-red-200 text-gray-500 rounded-xl mx-auto
+  @apply border-red-500 border-4  w-full lg:w-100 min-h-60 p-5 m-1 bg-red-200 text-gray-500 rounded-xl mx-auto
 }
 
 .card2 {
-  @apply border-blue-500 border-4 w-100 min-h-60 p-5 m-1  bg-blue-200 text-gray-500 rounded-xl mx-auto
+  @apply border-blue-500 border-4 w-full lg:w-100 min-h-60 p-5 m-1  bg-blue-200 text-gray-500 rounded-xl mx-auto
 }
 
 .card3 {
-  @apply border-yellow-500 border-4 w-100 min-h-60 p-5 m-1 bg-yellow-200 text-gray-500 rounded-xl mx-auto
+  @apply border-yellow-500 border-4 w-full lg:w-100 min-h-60 p-5 m-1 bg-yellow-200 text-gray-500 rounded-xl mx-auto
 }
 
 .card4 {
-  @apply border-gray-800 border-4 w-100 min-h-60 p-5 m-1 bg-gray-800 text-gray-500 rounded-xl mx-auto
+  @apply border-gray-800 border-4 w-full lg:w-100 min-h-60 p-5 m-1 bg-gray-800 text-gray-500 rounded-xl mx-auto
 }
 
 .card5 {
@@ -21,11 +21,11 @@
 }
 
 .card6 {
-  @apply border-orange-500 border-4 w-100 min-h-60 p-5 m-1 bg-orange-200 text-gray-500 rounded-xl mx-auto
+  @apply border-orange-500 border-4 w-full lg:w-100 min-h-60 p-5 m-1 bg-orange-200 text-gray-500 rounded-xl mx-auto
 }
 
 .card7 {
-  @apply border-gray-500 border-4 w-100 min-h-60 p-5 m-1 text-gray-500 rounded-xl mx-auto
+  @apply border-gray-500 border-4 w-full lg:w-100 min-h-60 p-5 m-1 text-gray-500 rounded-xl mx-auto
 }
 
 .card1>.task {

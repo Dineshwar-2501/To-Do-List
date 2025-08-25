@@ -32,6 +32,7 @@
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-bold: 700;
+    --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-3xl: 1.5rem;
     --default-font-family: var(--font-sans);
@@ -187,9 +188,6 @@
   }
 }
 @layer utilities {
-  .absolute {
-    position: absolute;
-  }
   .fixed {
     position: fixed;
   }
@@ -259,23 +257,11 @@
   .hidden {
     display: none;
   }
-  .table {
-    display: table;
-  }
   .h-fit {
     height: fit-content;
   }
   .w-0 {
     width: calc(var(--spacing) * 0);
-  }
-  .w-30 {
-    width: calc(var(--spacing) * 30);
-  }
-  .w-50 {
-    width: calc(var(--spacing) * 50);
-  }
-  .w-70 {
-    width: calc(var(--spacing) * 70);
   }
   .w-100 {
     width: calc(var(--spacing) * 100);
@@ -286,22 +272,12 @@
   .w-full {
     width: 100%;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .translate-x-11 {
-    --tw-translate-x: calc(var(--spacing) * 11);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .translate-x-11\.5 {
     --tw-translate-x: calc(var(--spacing) * 11.5);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .rotate-270 {
     rotate: 270deg;
-  }
-  .resize {
-    resize: both;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -321,12 +297,11 @@
   .rounded-3xl {
     border-radius: var(--radius-3xl);
   }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
   .rounded-xl {
     border-radius: var(--radius-xl);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
   }
   .border-1 {
     border-style: var(--tw-border-style);
@@ -367,6 +342,9 @@
   }
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
+  }
+  .pb-1 {
+    padding-bottom: calc(var(--spacing) * 1);
   }
   .text-center {
     text-align: center;
@@ -410,10 +388,6 @@
   .underline-offset-4 {
     text-underline-offset: 4px;
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
   .lg\:absolute {
     @media (width >= 64rem) {
       position: absolute;
@@ -444,6 +418,11 @@
       width: calc(var(--spacing) * 100);
     }
   }
+  .lg\:w-fit {
+    @media (width >= 64rem) {
+      width: fit-content;
+    }
+  }
   .lg\:translate-x-95 {
     @media (width >= 64rem) {
       --tw-translate-x: calc(var(--spacing) * 95);
@@ -471,7 +450,7 @@
   margin: calc(var(--spacing) * 1);
   margin-inline: auto;
   min-height: calc(var(--spacing) * 60);
-  width: calc(var(--spacing) * 100);
+  width: 100%;
   border-radius: var(--radius-xl);
   border-style: var(--tw-border-style);
   border-width: 4px;
@@ -479,12 +458,15 @@
   background-color: var(--color-red-200);
   padding: calc(var(--spacing) * 5);
   color: var(--color-gray-500);
+  @media (width >= 64rem) {
+    width: calc(var(--spacing) * 100);
+  }
 }
 .card2 {
   margin: calc(var(--spacing) * 1);
   margin-inline: auto;
   min-height: calc(var(--spacing) * 60);
-  width: calc(var(--spacing) * 100);
+  width: 100%;
   border-radius: var(--radius-xl);
   border-style: var(--tw-border-style);
   border-width: 4px;
@@ -492,12 +474,15 @@
   background-color: var(--color-blue-200);
   padding: calc(var(--spacing) * 5);
   color: var(--color-gray-500);
+  @media (width >= 64rem) {
+    width: calc(var(--spacing) * 100);
+  }
 }
 .card3 {
   margin: calc(var(--spacing) * 1);
   margin-inline: auto;
   min-height: calc(var(--spacing) * 60);
-  width: calc(var(--spacing) * 100);
+  width: 100%;
   border-radius: var(--radius-xl);
   border-style: var(--tw-border-style);
   border-width: 4px;
@@ -505,12 +490,15 @@
   background-color: var(--color-yellow-200);
   padding: calc(var(--spacing) * 5);
   color: var(--color-gray-500);
+  @media (width >= 64rem) {
+    width: calc(var(--spacing) * 100);
+  }
 }
 .card4 {
   margin: calc(var(--spacing) * 1);
   margin-inline: auto;
   min-height: calc(var(--spacing) * 60);
-  width: calc(var(--spacing) * 100);
+  width: 100%;
   border-radius: var(--radius-xl);
   border-style: var(--tw-border-style);
   border-width: 4px;
@@ -518,6 +506,9 @@
   background-color: var(--color-gray-800);
   padding: calc(var(--spacing) * 5);
   color: var(--color-gray-500);
+  @media (width >= 64rem) {
+    width: calc(var(--spacing) * 100);
+  }
 }
 .card5 {
   margin: calc(var(--spacing) * 1);
@@ -538,7 +529,7 @@
   margin: calc(var(--spacing) * 1);
   margin-inline: auto;
   min-height: calc(var(--spacing) * 60);
-  width: calc(var(--spacing) * 100);
+  width: 100%;
   border-radius: var(--radius-xl);
   border-style: var(--tw-border-style);
   border-width: 4px;
@@ -546,18 +537,24 @@
   background-color: var(--color-orange-200);
   padding: calc(var(--spacing) * 5);
   color: var(--color-gray-500);
+  @media (width >= 64rem) {
+    width: calc(var(--spacing) * 100);
+  }
 }
 .card7 {
   margin: calc(var(--spacing) * 1);
   margin-inline: auto;
   min-height: calc(var(--spacing) * 60);
-  width: calc(var(--spacing) * 100);
+  width: 100%;
   border-radius: var(--radius-xl);
   border-style: var(--tw-border-style);
   border-width: 4px;
   border-color: var(--color-gray-500);
   padding: calc(var(--spacing) * 5);
   color: var(--color-gray-500);
+  @media (width >= 64rem) {
+    width: calc(var(--spacing) * 100);
+  }
 }
 .card1>.task {
   margin: calc(var(--spacing) * 2);
@@ -681,11 +678,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -694,7 +686,6 @@
       --tw-translate-z: 0;
       --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
     }
   }
 }
